@@ -1,0 +1,94 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+    <title>Opinion Surve Form</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+
+<style rel="stylesheet" type="text/css" media="screen">
+    .card {
+        box-shadow: -1px 1px 60px 10px black;
+        background: rgb(0,0,0,0.4);
+        color: white;
+    }
+</style>
+
+<body background="/static/img/take-survey.jpg">
+
+    <div class="col-md-6 offset-md-3"></div>
+        <span class="anchor" id="opinionMining"></span>
+
+        <hr class="mb-5">
+    <!-- form card register -->
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0 text-center">Opinion Survey Form</h3>
+                <p>This opinion mining evaluation is part of a regular effort to maintain quality education.
+                The institution will use your responses to these questions to encourage better teaching.
+                    We take your answers seriously, and we hope you will also take them seriously. Your responses are anonymous. Completing this survey will in no way affect your course grade.
+                    Thank you for participating in this evaluation.</p>
+                <p>On a scale of 1 to 5, please evaluate your lecturer:<p>
+                <p>5-Always 4-Often 3-Sometimes 2-Rarely 1-Never 0-I can’t answer</p>
+            </div>
+        </div>
+<div class="card-body">
+    <form action="{{ url_for('analyse') }}" method="POST">
+        <div class="form-group">
+            <label>Lecturer's Name</label>
+            <input type="text" class="form-control" name="lecturer" required="required">
+        </div>
+        <div class="form-group">
+            <label>Course Code</label>
+            <input type="text" class="form-control" name="course_code" required="required">
+        </div>
+        <div class="form-group">
+            <label>1. My lecturer begins and ends our class on time.</label>
+            <input type="number" class="form-control" name="q1" required="required">
+        </div>
+        <div class="form-group">
+            <label>2. My lecturer is always well-prepared for class.</label>
+            <input type="number" class="form-control" name="q2" required="required">
+        </div>
+        <div class="form-group">
+            <label>3. My lecturer is organized and teaches clearly.</label>
+            <input type="number" class="form-control" name="q3" required="required">
+        </div>
+        <div class="form-group">
+            <label>4. My lecturer checks during class to see if students understand the material.</label>
+            <input type="number" class="form-control" name="q4" required="">
+        </div>
+        <div class="form-group">
+            <label>5. My lecturer encourages students to ask questions and participate.</label>
+            <input type="number" class="form-control" name="q5" required="">
+        </div>
+        <div class="form-group">
+            <label>6. My lecturer answers questions clearly.</label>
+            <input type="number" class="form-control" name="q6" required="">
+        </div>
+        <div class="form-group">
+            <label>7. My lecturer knows the subject matter of this course.</label>
+            <input type="number" class="form-control" name="q7" required="">
+        </div>
+        <div class="form-group">
+            <label>8. My lecturer shows interest in the material that we are studying.</label>
+            <input type="number" class="form-control" name="q8" required="">
+        </div>
+        <div class="form-group">
+            <label>9. My lecturer encourages me to think and explore new ideas.</label>
+            <input type="number" class="form-control" name="q9" required="">
+        </div>
+        <div class="form-group">
+            <label>10. My lecturer tells the class at each meeting
+                what we are going to do and what we are expected to learn.</label>
+            <input type="number" class="form-control" name="q10" required="">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary btn-lg float-right">Submit</button>
+        </div>
+    </form>
+<!-- /form card register -->
+</div>
+</body>
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+	<title>Recommendation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <style rel="stylesheet" type="text/css" media="screen">
+        body {
+            background-color: #eef6ec;
+        }
+    </style>
+<body>
+<!-- jumbotron -->
+<header>
+<div id="about" class="offset">
+    <div class="container-fluid">
+        <div class="row jumbotron jumbotron-fluid">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-12 text-center">
+
+                <h2 class="display-4"> Students' Opinion Mining Platform</h2>
+
+                <p class="lead">Thank you for your response.</p>
+                <p class="lead">Your Opinion matters.</p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<!-- End About Section-->
+       <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-12 text-center">
+
+                    <div class="results">
+
+                        {% if prediction == 0 %}
+                        <h2>Lecturer Performance is Satisfactory<b>{{ result }}</b></h2>
+                        <p class="lead">Based on your response, we we</p>
+                        {% elif prediction == 1 %}
+                        <h2>Lecturer Performance is Not Satisfactory <b>{{ result }}</b></h2>
+                        <p class="lead">
+
+                        </p>
+                        {% endif %}
+
+                        <p class="lead">
+                            <a class="btn btn-outline-success btn-lg" href="{{ url_for('home') }}" role="button">Log Out</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+       </div>
+
+
+
+
+<!-- footer Section -->
+<div class="offset text-center">
+<footer class="container">
+  <p>&copy; <i>SpefacTech</i> 2019</p>
+</footer>
+</div>
+</body>
+
+{% endblock %}
