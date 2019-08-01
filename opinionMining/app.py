@@ -92,7 +92,7 @@ def logout():
 def survey():
     return render_template('survey.html')
 
-result = random.randint(0,1)
+
 @app.route('/analyse', methods=['POST', 'GET'])
 def analyse():
     global result
